@@ -24,6 +24,17 @@ onMounted(() => {
   getMenu();
 })
 
+const scrollToCategoria = (categoria) => {
+  const el = document.getElementById(`secao-${categoria}`)
+  if (el) {
+    el.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  }
+}
+
+
 </script>
 
 <template>
@@ -32,21 +43,26 @@ onMounted(() => {
     <img id="pizza_group_1" src="/pizza_group_1.png">
     <img id="pizza_group_2" src="/pizza_group_2.png">
     <img id="pizza_group_3" src="/pizza_group_3.png">
-    <h1 id="title" class="text-[clamp(16px,6vw,62px)] text-[#ff3635]">Cantinho das Pizzas e do Açaí</h1>
-    <h2 id="subTitle" class="text-[clamp(10px,3vw,42px)]">Seja bem-vindo!</h2>
-    <h2 id="lastTitle" class="text-[clamp(10px,3vw,42px)] text-[#f8b400]">Confira nosso cardápio</h2>
+    <h1 id="title" class="text-[#ff3635]">Cantinho das Pizzas e do Açaí</h1>
+    <h2 id="subTitle">Seja bem-vindo!</h2>
+    <h2 id="lastTitle" class="text-[#f8b400]">Confira nosso cardápio</h2>
 
-    <div>
+
+
+    <div flex flex-col text-center items-center w-full>
       <!-- carregamento -->
       <div class="text-2xl" v-if="Object.keys(cardapio).length === 0">
         Carregando...
       </div>
 
-      <div v-else class="flex gap-15 text-center justify-center mt-10 mb-10">
-        <div id="" v-for="categoria in Object.keys(cardapio)" :key="categoria">
+      <div id="categorias_nav" v-else class="flex gap-[clamp(0px,2vw,40px)] text-center justify-center mt-10 mb-10">
+        <div v-for="categoria in Object.keys(cardapio)" :key="categoria">
           <h2
-            class="categorias cursor-pointer hover:underline decoration-solid decoration-2 decoration-white hover:scale-110 transition-all 0.3s">
-            {{ categoria }}</h2>
+            class="categorias cursor-pointer hover:underline decoration-solid decoration-2 decoration-white hover:scale-110 transition-all 0.3s"
+            @click="scrollToCategoria(categoria)">
+            {{ categoria }}
+          </h2>
+
         </div>
       </div>
 
@@ -55,7 +71,7 @@ onMounted(() => {
         <!-- card do menu -->
         <div class="bg-[rgba(23,23,23,0.3)] rounded-2xl w-150" id="menu">
           <div v-for="categoria in Object.keys(cardapio)" :key="categoria">
-            <h2 id="menu_categoria">{{ categoria }}</h2>
+            <h2 :id="`secao-${categoria}`" class="menu_categoria">{{ categoria }}</h2>
             <ul id="menu_elements" class="mb-15">
               <li class="border-b border-solid border-[rgba(137,137,137,0.5)] hover:bg-[rgba(83,83,83,0.3)]"
                 v-for="item in cardapio[categoria]" :key="item.sabor ?? item.nome">
@@ -73,7 +89,6 @@ onMounted(() => {
           </div>
         </div>
       </div>
-
 
 
 

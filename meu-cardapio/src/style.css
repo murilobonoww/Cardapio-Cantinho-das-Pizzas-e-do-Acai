@@ -84,91 +84,117 @@ button:focus-visible {
   font-family: 'Fonte_regular';
   font-size: 18px;
   z-index: 10;
+  top: 20%;
   border: white 2px solid;
 }
 
-#menu_categoria {
+.menu_categoria {
   font-family: 'Fonte_bold' !important;
   color: #b88805;
   font-size: 33px;
 }
 
+
 .categorias{
-  z-index: 10 !important;
+  display: flex;
+  z-index: 20 !important;
   font-size: clamp(5px,3vw,17px);
+  cursor: pointer !important;
+}
+
+.categorias:hover{
+  color:rgb(153, 152, 152);
+  
+}
+
+#categorias_nav{
+  text-align: center;
 }
 
 
 #pizza_landing_1 {
-  animation: fadeIn 3s ease-in;
+  animation: fadeIn 1.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: opacity, transform;
   position: absolute;
-  left: 0px;
   z-index: 0;
   user-select: none;
   pointer-events: none;
+  width: clamp(160px,30vw,1000px);
+  left: clamp(10%,1vw,6%);
+  top: 10%;
 }
 
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    scale: 0.9;
-    transform: translateX(-20px);
+    transform: translateX(-20px) scale(0.96);
+  }
+
+  70% {
+    opacity: 0.9;
   }
 
   100% {
     opacity: 1;
-    scale: 1;
+    transform: translateX(0) scale(1);
   }
 }
 
 #pizza_group_1 {
-  animation: fadeInGroup 3s ease-in;
+  animation: fadeInGroup 1.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: opacity, transform;
   position: absolute;
-  right: 230px;
-  width: 300px;
-  top: 1000px;
-  z-index: 0;
+  z-index: 1;
   user-select: none;
   pointer-events: none;
+  right: clamp(10%,1vw,6%);
+  width: clamp(130px,20vw,1000px);
+  top: 70%;
 }
 
 #pizza_group_2 {
-  animation: fadeInGroup 3s ease-in;
+  animation: fadeInGroup 1.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: opacity, transform;
   position: absolute;
-  right: 200px;
-  width: 300px;
-  top: 800px;
-  user-select: none;
-  pointer-events: none;
-  z-index: 1;
-}
-
-#pizza_group_3 {
-  animation: fadeInGroup 3s ease-in;
-  position: absolute;
-  right: 210px;
-  width: 300px;
-  top: 600px;
+  top: 80%;
   user-select: none;
   pointer-events: none;
   z-index: 2;
+  right: clamp(10%,1vw,6%);
+  width: clamp(110px,18vw,900px);
+}
+
+#pizza_group_3 {
+  animation: fadeInGroup 1.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: opacity, transform;
+  position: absolute;
+  top: 90%;
+  user-select: none;
+  pointer-events: none;
+  z-index: 3;
+  right: clamp(10%,1vw,6%);
+  width: clamp(130px,20vw,1000px);
 }
 
 @keyframes fadeInGroup {
   0% {
     opacity: 0;
-    scale: 0.9;
-    transform: translateX(20px);
+    transform: translateX(20px) scale(0.96);
+  }
+
+  70% {
+    opacity: 0.9;
   }
 
   100% {
     opacity: 1;
-    scale: 1;
+    transform: translateX(0) scale(1);
   }
 }
 
 #title{
   animation: fadeInTitle 1.4s ease-in;
+  font-size: clamp(16px,6vw,62px);
 }
 
 @keyframes fadeInTitle {
@@ -183,6 +209,7 @@ button:focus-visible {
 
 #subTitle{
   animation: fadeInSubTitle 1.5s ease-in-out;
+  font-size: clamp(10px,3vw,42px);
 }
 
 @keyframes fadeInSubTitle {
@@ -199,6 +226,7 @@ button:focus-visible {
 #lastTitle{
   animation: fadeInLastTitle 1.5s ease-in-out;
   margin-top: clamp(1px, -1vw, 10px);
+  font-size: clamp(10px,3vw,42px);
 }
 
 @keyframes fadeInLastTitle {
