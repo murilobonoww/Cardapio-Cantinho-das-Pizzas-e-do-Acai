@@ -1,0 +1,234 @@
+@import "tailwindcss";
+@tailwind utilities;
+
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  background-color: black;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'Fonte_thin';
+}
+
+h1,
+h2 {
+  font-family: 'Fonte_bold';
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.card {
+  padding: 2em;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+
+  a:hover {
+    color: #747bff;
+  }
+
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+#menu {
+  font-family: 'Fonte_regular';
+  font-size: 18px;
+  z-index: 10;
+  border: white 2px solid;
+}
+
+#menu_categoria {
+  font-family: 'Fonte_bold' !important;
+  color: #b88805;
+  font-size: 33px;
+}
+
+.categorias{
+  z-index: 10 !important;
+  font-size: clamp(5px,3vw,17px);
+}
+
+
+#pizza_landing_1 {
+  animation: fadeIn 3s ease-in;
+  position: absolute;
+  left: 0px;
+  z-index: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    scale: 0.9;
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+#pizza_group_1 {
+  animation: fadeInGroup 3s ease-in;
+  position: absolute;
+  right: 230px;
+  width: 300px;
+  top: 1000px;
+  z-index: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+#pizza_group_2 {
+  animation: fadeInGroup 3s ease-in;
+  position: absolute;
+  right: 200px;
+  width: 300px;
+  top: 800px;
+  user-select: none;
+  pointer-events: none;
+  z-index: 1;
+}
+
+#pizza_group_3 {
+  animation: fadeInGroup 3s ease-in;
+  position: absolute;
+  right: 210px;
+  width: 300px;
+  top: 600px;
+  user-select: none;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes fadeInGroup {
+  0% {
+    opacity: 0;
+    scale: 0.9;
+    transform: translateX(20px);
+  }
+
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+#title{
+  animation: fadeInTitle 1.4s ease-in;
+}
+
+@keyframes fadeInTitle {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#subTitle{
+  animation: fadeInSubTitle 1.5s ease-in-out;
+}
+
+@keyframes fadeInSubTitle {
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#lastTitle{
+  animation: fadeInLastTitle 1.5s ease-in-out;
+  margin-top: clamp(1px, -1vw, 10px);
+}
+
+@keyframes fadeInLastTitle {
+  0% {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+@font-face {
+  font-family: 'Fonte_bold';
+  src: url('./assets/fonts/Londrina_Solid/LondrinaSolid-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Fonte_thin';
+  src: url('./assets/fonts/Londrina_Solid/LondrinaSolid-Thin.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Fonte_regular';
+  src: url('./assets/fonts/Londrina_Solid/LondrinaSolid-Regular.ttf') format('truetype');
+}
