@@ -83,7 +83,7 @@ const scrollToCategoria = (categoria) => {
                 </template>
 
                 <template v-if="categoria === 'esfihas'">
-                  {{ item.sabor }} - R$ {{ item.preco_ }}
+                  {{ item.sabor }} - R$ {{ item.preco }}
                 </template>
 
                 <!-- Outras categorias -->
