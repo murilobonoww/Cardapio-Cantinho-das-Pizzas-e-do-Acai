@@ -121,7 +121,7 @@ button:focus-visible {
   pointer-events: none;
   width: clamp(160px,30vw,1000px);
   left: clamp(10%,1vw,6%);
-  top: 10%;
+  top: 20%;
 }
 
 @keyframes fadeIn {
