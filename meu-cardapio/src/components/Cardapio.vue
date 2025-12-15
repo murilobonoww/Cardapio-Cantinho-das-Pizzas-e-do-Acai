@@ -76,8 +76,14 @@ const scrollToCategoria = (categoria) => {
               <li class="border-b border-solid border-[rgba(137,137,137,0.5)] hover:bg-[rgba(83,83,83,0.3)]"
                 v-for="item in cardapio[categoria]" :key="item.sabor ?? item.nome">
                 <!-- Pizzas e esfihas -->
-                <template v-if="categoria === 'pizzas' || categoria === 'esfihas'">
+
+
+                <template v-if="categoria === 'pizzas'">
                   {{ item.sabor }} - R$ {{ item.preco_25 }} | R$ {{ item.preco_35 }}
+                </template>
+
+                <template v-if="categoria === 'esfihas'">
+                  {{ item.sabor }} - R$ {{ item.preco_ }}
                 </template>
 
                 <!-- Outras categorias -->
@@ -89,11 +95,7 @@ const scrollToCategoria = (categoria) => {
           </div>
         </div>
       </div>
-
-
-
     </div>
-
   </div>
 </template>
 
